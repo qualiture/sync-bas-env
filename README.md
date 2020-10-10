@@ -61,7 +61,7 @@ Once the `sync-bas-env.tgz` file is copied to the target development workspace, 
 ### Prerequisites
 
 * `~/.scripts` directory which contains any bash scripts you might have, for instance `bash_command_timer.sh`
-* `~/vscode-plugins` directory which contains the `*.vsix` files for the VSCode plugins you may have installed
+* `~/vscode-plugins` directory which contains the `*.vsix` files for the VSCode plugins you may have installed using `local-dir:/home/user/vscode-plugins`. If you are using a different directory, you should change the `$VSCODE_PLUGINS_DIR` variable inside the script accordingly
 
 ### Installation
 
@@ -71,7 +71,7 @@ cd ~
 ```
 2. Download the `sync-bas-env.sh` file
 ```sh
-https://raw.githubusercontent.com/qualiture/sync-bas-env/main/sync-bas-env.sh -O
+curl https://raw.githubusercontent.com/qualiture/sync-bas-env/main/sync-bas-env.sh -O
 ```
 3. Make it executable
 ```sh
