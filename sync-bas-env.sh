@@ -43,7 +43,11 @@ then
 
     tar cvfz sync-bas-env.tgz .sync-bas-env/
 
-    echo "Settings successfully exported"
+    rm -R $TARGET_DIR
+
+    echo ""
+    echo "SAP BAS Settings successfully exported to sync-bas-env.tgz"
+    echo "Import this file to the target SAP BAS environment, unzip, and execute the script"
     echo ""
 elif [ $parameterO == "import" ]
 then
@@ -58,6 +62,7 @@ then
 
     cp -rf sync-bas-env.sh ~
 
+    echo ""
     echo "Settings successfully imported into SAP BAS workspace"
     echo ""
     echo "NVM will now be installed..."
