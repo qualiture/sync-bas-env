@@ -33,6 +33,7 @@ then
     cp -rf ~/.bashrc $TARGET_DIR
     cp -rf ~/.profile $TARGET_DIR
     [ -d ~/.scripts ] && cp -rf ~/.scripts $TARGET_DIR
+    [ -f ~/.npmrc ] && cp -rf ~/.npmrc $TARGET_DIR
     [ -f ~/.gitconfig ] && cp -rf ~/.gitconfig $TARGET_DIR
     [ -f ~/.git-credentials ] && cp -rf ~/.git-credentials $TARGET_DIR
     [ -f ~/.theia/keymaps.json ] && cp -rf ~/.theia/keymaps.json $TARGET_DIR/.theia
@@ -54,6 +55,7 @@ then
     cp .bashrc ~
     cp .profile ~
     [ -d .scripts/ ] && cp -rf .scripts/ ~
+    [ -f .npmrc ] && cp -rf .npmrc ~
     [ -f .gitconfig ] && cp -rf .gitconfig ~
     [ -f .git-credentials ] && cp -rf .git-credentials ~
     [ -f .theia/keymaps.json ] && cp -rf .theia/keymaps.json ~/.theia/
