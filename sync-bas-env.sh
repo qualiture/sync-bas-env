@@ -31,9 +31,11 @@ then
     mkdir -p $TARGET_DIR/.theia
 
     cp -rf ~/.bashrc $TARGET_DIR
+    cp -rf ~/.bash_aliases $TARGET_DIR
     cp -rf ~/.profile $TARGET_DIR
     [ -d ~/.scripts ] && cp -rf ~/.scripts $TARGET_DIR
     [ -f ~/.npmrc ] && cp -rf ~/.npmrc $TARGET_DIR
+    [ -f ~/.gitignore ] && cp -rf ~/.gitignore $TARGET_DIR
     [ -f ~/.gitconfig ] && cp -rf ~/.gitconfig $TARGET_DIR
     [ -f ~/.git-credentials ] && cp -rf ~/.git-credentials $TARGET_DIR
     [ -f ~/.theia/keymaps.json ] && cp -rf ~/.theia/keymaps.json $TARGET_DIR/.theia
@@ -53,9 +55,11 @@ then
 elif [ $parameterO == "import" ]
 then
     cp .bashrc ~
+    cp .bash_aliases ~
     cp .profile ~
     [ -d .scripts/ ] && cp -rf .scripts/ ~
     [ -f .npmrc ] && cp -rf .npmrc ~
+    [ -f .gitignore ] && cp -rf .gitignore ~
     [ -f .gitconfig ] && cp -rf .gitconfig ~
     [ -f .git-credentials ] && cp -rf .git-credentials ~
     [ -f .theia/keymaps.json ] && cp -rf .theia/keymaps.json ~/.theia/
