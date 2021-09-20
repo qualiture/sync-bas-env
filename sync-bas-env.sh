@@ -71,12 +71,12 @@ then
     echo ""
     echo "Settings successfully imported into SAP BAS workspace"
     echo ""
-    echo "NVM will now be installed..."
+    # echo "NVM will now be installed..."
     
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
-    echo "Open a new terminal from SAP BAS, and execute:"
-    echo "$ nvm install 12"
-    echo ""
+    # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+    # echo "Open a new terminal from SAP BAS, and execute:"
+    # echo "$ nvm install 12"
+    # echo ""
     echo "To install the VSCode plugins: Ctrl-Shift-P > Deploy Plugin By Id > local-dir:/home/user/vscode-plugins/"
     echo ""
 else
