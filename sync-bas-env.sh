@@ -28,6 +28,7 @@ fi
 
 if [ $parameterO == "export" ]
 then
+    mkdir -p $TARGET_DIR
     mkdir -p $TARGET_DIR/.theia
 
     cp -rf ~/.bashrc $TARGET_DIR
@@ -41,12 +42,13 @@ then
     [ -f ~/.theia/keymaps.json ] && cp -rf ~/.theia/keymaps.json $TARGET_DIR/.theia
     [ -f ~/.theia/settings.json ] && cp -rf ~/.theia/settings.json $TARGET_DIR/.theia
     [ -d ~/$VSCODE_PLUGINS_DIR ] && cp -rf ~/$VSCODE_PLUGINS_DIR $TARGET_DIR
+    jq -r '.[].identifier.id' ~/.vscode/extensions/extensions.json > $TARGET_DIR/extensions.txt
 
-    cp -rf ~/sync-bas-env.sh $TARGET_DIR
+    cp -rf sync-bas-env.sh $TARGET_DIR
 
-    tar cvfz sync-bas-env.tgz .sync-bas-env/
+    tar cvfz sync-bas-env.tgz $TARGET_DIR
 
-    rm -R $TARGET_DIR
+    # rm -R $TARGET_DIR
 
     echo ""
     echo "SAP BAS Settings successfully exported to sync-bas-env.tgz"
@@ -78,6 +80,8 @@ then
     # echo "$ nvm install 12"
     # echo ""
     echo "To install the VSCode plugins: Ctrl-Shift-P > Deploy Plugin By Id > local-dir:/home/user/vscode-plugins/"
+    echo "or install the following by hand:"
+    cat extensions.txt
     echo ""
 else
     echo "Illegal argument for parameter -o"
